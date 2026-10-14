@@ -13,4 +13,4 @@ GITBATH:
 ====================================================================================================================================
 so sánh:
 • PowerShell viết câu lệnh trông giống ngữ pháp tiếng Anh (Get- là động từ, -Item là danh từ). Cách viết này tuy dài dòng nhưng rất rõ nghĩa, dễ đọc, dễ hiểu thuộc tính dữ liệu.
-• Git Bash ưu tiên sự ngắn gọn, súc tích bằng các ký tự viết tắt (-v, -f, wc). Khi bạn đã thuộc các ký tự này, tốc độ gõ lệnh và xử lý log của bạn bên Git Bash sẽ nhanh hơn PowerShell rất nhiều.
+• Git Bash ưu tiên sự ngắn gọn, súc tích bằng các ký tự viết tắt (-v, -f, wc). Khi bạn đã thuộc các ký tự này, tốc độ gõ lệnh và xử lý log Git Bash sẽ nhanh hơn PowerShell rất nhiều.
