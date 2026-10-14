@@ -1,0 +1,16 @@
+Từ file READMI.MD được giao làm thì đã học phân tích được 1 số thứ
+POWERSHELL:
+tạo các file readme từ các dòng sau:
+- đầu tiên là dung lệnh New-Item -Path "README.md" -ItemType File để tạo các file như readme.md hay txt
+- get-childitem -file *log -r để đọc và tiềm kiếm các file readme.md hay txt
+- get-childitem -file *log -r | Select-String "TIMEOUT" | Where-Object { $_ -notmatch "NOT TIMEOUT" } là tìm file lùng sục khắp các file log nhằm tìm ra các dòng bị lỗi phản hồi chậm TIMEOUT VÀ  qua các dòng có chứa cụm từ NOT TIMEOUT
+-Get-ChildItem -File -Filter "*.log" -Recurse | Select-String -Pattern "TIMEOUT" | Where-Object { $_.Line -notmatch "NOT TIMEOUT" } | Measure-Object | Select-Object -ExpandProperty Count để đếm 
+===================================================================================================================================
+GITBATH:
+-find . -type f -name "*log" dùng để đọc và tìm các file readme.md 
+-find . -type f -name "*log" -exec grep -i "TIMEOUT" {} + | grep -v -i "NOT TIMEOUT" :à tìm file lùng sục khắp các file log nhằm tìm ra các dòng bị lỗi phản hồi chậm TIMEOUT VÀ  qua các dòng có chứa cụm từ NOT TIMEOUT
+-find -type f -name *.log |xargs grep -i "TIMEOUT" | grep -v -i "NOT TIMEOUT"| wc -l : lệnh này dùng để tính tổng kết các file có trong tệp tin.
+====================================================================================================================================
+so sánh:
+• PowerShell viết câu lệnh trông giống ngữ pháp tiếng Anh (Get- là động từ, -Item là danh từ). Cách viết này tuy dài dòng nhưng rất rõ nghĩa, dễ đọc, dễ hiểu thuộc tính dữ liệu.
+• Git Bash ưu tiên sự ngắn gọn, súc tích bằng các ký tự viết tắt (-v, -f, wc). Khi bạn đã thuộc các ký tự này, tốc độ gõ lệnh và xử lý log của bạn bên Git Bash sẽ nhanh hơn PowerShell rất nhiều.
